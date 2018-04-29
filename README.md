@@ -3,7 +3,7 @@ Recaptcha library for codeigniter 3
 
 How to setup.
 
-Firstly, go to google and apply for a recaptcha - https://www.google.com/recaptcha/admin#list - and follow the steps it asks you to do.
+Firstly, go to google and apply for a recaptcha - https://www.google.com/recaptcha/admin#list - and follow the steps it asks you to do. Choose recaptcha v2 as this library only works on that version. In domains field, you can add 127.0.0.1 and localhost if you're testing locally. 
 
 Then follow these steps.
 1. Download and put Mc_recaptcha.php in application/libraries folder.
