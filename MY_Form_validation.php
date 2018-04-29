@@ -9,11 +9,11 @@ class MY_Form_validation extends CI_Form_validation {
 		$this->CI =& get_instance();
         }
 	
-	public function recaptcha_valid($g_recaptcha_response) {
+	public function valid_recaptcha($g_recaptcha_response) {
 		$this->CI->load->library('Mc_recaptcha');
 		
 		if ($this->CI->mc_recaptcha->validated() == TRUE) {
-				return TRUE;
+			return TRUE;
 		}
 
 		return FALSE;
