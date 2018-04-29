@@ -7,7 +7,8 @@ Firstly, go to google and apply for a recaptcha - https://www.google.com/recaptc
 
 Then follow these steps.
 1. Download and put Mc_recaptcha.php in application/libraries folder.
-2. Open Mc_recaptcha.php and set the value of $secret_key to the secret key given to you by google.
+2. Open Mc_recaptcha.php and set the value of $secret_key to the secret key given to you by google. 
+2. Again in Mc_recaptcha.php set the value of $site_key to the site key given to you by google. 
 3. You can load the library in your controllers by doing $this->load->library('Mc_captcha');
-4. To validate recaptcha in your form submission, you can do $this->mc_recaptcha->validated() which returns TRUE when valid and FALSE when not.
+4. To validate recaptcha in your form submission, you can do $this->mc_recaptcha->validated() which returns TRUE when recaptcha valid and FALSE when not.
 4. Done.
