@@ -28,8 +28,8 @@ class Mc_recaptcha {
 	
 	public function validated(){
 		$grr_post = $this->CI->input->post('g-recaptcha-response');
-		$user_ip = $_SERVER['REMOTE_ADDR'];
-		$output = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$this->get_secret_key()."&response={$grr_post}&remoteip=".$user_ip);
+		$user_ip = $this->CI->input->ip_address();
+		$output = $this->http_get("https://www.google.com/recaptcha/api/siteverify?secret=".$this->get_secret_key()."&response={$grr_post}&remoteip=".$user_ip);
 		$output = json_decode($output, TRUE);
 		
 		if ($output['success']=='1') {
@@ -37,6 +37,26 @@ class Mc_recaptcha {
 		}
 		
 		return FALSE;
+	}
+	
+	// HTTP Helper Class
+	public function http_get($url){
+		$output = @file_get_contents($url);
+
+		if($output === FALSE) {
+			if (function_exists('curl_init')){ 
+				$curl = curl_init();
+				curl_setopt($curl, CURLOPT_URL, $url);
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+				curl_setopt($curl, CURLOPT_TIMEOUT, 15);
+				curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, TRUE);
+				curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2); 
+				$output = curl_exec($curl);
+				curl_close($curl);
+			}
+		}
+		
+		return $output;
 	}
 }
 
