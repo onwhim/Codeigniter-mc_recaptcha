@@ -14,6 +14,6 @@ Then follow these steps.
 4. Done.
 
 BTW, there's an existing custom form_validation class included in this repo. To use it do the following steps.
-1. Download and put MY_Form_validation.php in application/libraries folder.
+1. Download and put MY_Form_validation.php in application/libraries folder. Or if you already have a custom form validation class, just copy the function in my file and paste it in yours.
 2. In your controller, on form submission, you can use it in setting rules by doing $this->form_validation->set_rules('g-recaptcha-response', 'Recaptcha', 'required|valid_recaptcha');
 3. That's it.
