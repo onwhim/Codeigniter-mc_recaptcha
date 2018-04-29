@@ -7,7 +7,7 @@ class MY_Form_validation extends CI_Form_validation {
 	function __construct(){
 		parent::__construct();
 		$this->CI =& get_instance();
-    }
+        }
 	
 	public function recaptcha_valid($g_recaptcha_response) {
 		$this->CI->load->library('Mc_recaptcha');
