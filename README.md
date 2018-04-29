@@ -1,5 +1,5 @@
 # mc_racaptcha
-Recaptcha library for codeigniter 3
+Recaptcha v2 library for codeigniter 3
 
 How to setup.
 
