@@ -15,7 +15,9 @@ class MY_Form_validation extends CI_Form_validation {
 		if ($this->CI->mc_recaptcha->validated() == TRUE) {
 			return TRUE;
 		}
-
+		else {
+			$this->CI->form_validation->set_message('valid_recaptcha', "Recaptcha says you are not human!");
+		}
 		return FALSE;
     }
 }
