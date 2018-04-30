@@ -38,7 +38,7 @@ class Mc_recaptcha {
 		return FALSE;
 	}
 	
-	// HTTP Helper Class
+	// HTTP Helper function
 	public function http_post($url){
 		$postdata = array();
 		
