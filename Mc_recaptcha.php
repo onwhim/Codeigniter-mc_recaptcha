@@ -32,7 +32,7 @@ class Mc_recaptcha {
 		$output = $this->http_post("https://www.google.com/recaptcha/api/siteverify?secret=".$this->get_secret_key()."&response={$grr_post}&remoteip=".$user_ip);
 		$output = json_decode($output, TRUE);
 		
-		if ($output['success']=='1') {
+		if (isset($output['success']) AND $output['success'] === true) {
 			return TRUE;
 		}
 		return FALSE;
