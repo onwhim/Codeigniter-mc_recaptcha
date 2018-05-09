@@ -10,12 +10,12 @@ Firstly, go to google and apply for a recaptcha - https://www.google.com/recaptc
 2. Open Mc_recaptcha.php and set the value of $secret_key to the secret key given to you by google. 
 2. Again in Mc_recaptcha.php set the value of $site_key to the site key given to you by google. 
 3. You can load the library in your controllers by doing $this->load->library('Mc_captcha');
-4. To validate recaptcha in your form submission, you can do $this->mc_recaptcha->validated() which returns TRUE when recaptcha valid and FALSE when not.
+4. To validate recaptcha in your form submission, you can do $this->mc_recaptcha->validated() which returns TRUE when recaptcha is valid and FALSE when not.
 4. Done.
 
 
 **(Optional)**
 BTW, there's an existing custom form_validation subclass included in this repo. To use it do the following steps.
-1. Download and put MY_Form_validation.php in application/libraries folder. Or if you already have a custom form_validation subclass, just copy the function in my file and paste it in yours.
-2. In your controller, on form submission block, you can use it in setting form rules by doing `$this->form_validation->set_rules('g-recaptcha-response', 'Recaptcha', 'required|valid_recaptcha');`
+1. Download and put MY_Form_validation.php in application/libraries folder. Or if you already have a custom form_validation subclass, just copy the function - `valid_recaptcha() {..}` - in my file and paste it in yours.
+2. In your controller, on form submission block, you can use this subclass in setting form rules by doing `$this->form_validation->set_rules('g-recaptcha-response', 'Recaptcha', 'required|valid_recaptcha');`
 3. That's it.
