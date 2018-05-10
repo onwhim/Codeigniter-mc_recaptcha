@@ -15,7 +15,7 @@ Firstly, go to google and apply for a recaptcha - https://www.google.com/recaptc
 
 
 **(Optional)**
-BTW, there's an existing custom form_validation subclass included in this repo. To use it do the following steps.
-1. Download and put MY_Form_validation.php in application/libraries folder. Or if you already have a custom form_validation subclass, just copy the function - `valid_recaptcha() {..}` - in my file and paste it in yours.
+BTW, there's an existing Form_validation subclass included in this repo. To use it do the following steps.
+1. Download and put MY_Form_validation.php in application/libraries folder. Or if you already have the subclass, just copy the function - `valid_recaptcha() {..}` - in my file and paste it in yours.
 2. In your controller, on form submission block, you can use this subclass in setting form rules by doing `$this->form_validation->set_rules('g-recaptcha-response', 'Recaptcha', 'required|valid_recaptcha');`
 3. That's it.
