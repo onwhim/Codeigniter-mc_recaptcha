@@ -1,5 +1,7 @@
 # mc_racaptcha
-Recaptcha v2 and invisible library for codeigniter 3
+
+Secured, effective and widely-used, captcha plugins shared by Google.
+Recaptcha v2 and invisible library for codeigniter 3. 
 
 ## How to setup.
 
