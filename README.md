@@ -3,14 +3,14 @@
 Secured, effective and widely-used, captcha plugins shared by Google.
 ReCAPTCHA v2 and Invisible library for Codeigniter 3. 
 
-## How to setup. Follow these steps.
+## How to setup.
 
 1. Firstly, go to google and apply for a recaptcha - https://www.google.com/recaptcha/admin#list - and follow the steps it asks you to do. In domains field, you can add 127.0.0.1 and localhost if you're testing locally. 
 2 Download and put Mc_recaptcha.php in application/libraries folder.
-3. Open Mc_recaptcha.php and set the value of $secret_key to the secret key given to you by google. 
-4. Again in Mc_recaptcha.php set the value of $site_key to the site key given to you by google. 
-5. You can load the library in your controllers by doing $this->load->library('Mc_captcha');
-6. To validate recaptcha in your form submission, you can do $this->mc_recaptcha->validated() which returns TRUE when recaptcha is valid and FALSE when not.
+3. Open Mc_recaptcha.php and set the value of `$secret_key` to the secret key given to you by google. 
+4. Again in Mc_recaptcha.php set the value of `$site_key` to the site key given to you by google. 
+5. You can load the library in your controllers by doing `$this->load->library('Mc_captcha');`
+6. To validate recaptcha in your form submission, you can do `$this->mc_recaptcha->validated()` which returns TRUE when recaptcha is valid and FALSE when not.
 7. Done.
 
 ### (Optional)
